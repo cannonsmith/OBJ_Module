@@ -1,0 +1,91 @@
+{
+	"Objects": {
+		"groups": [
+			"Objects General",
+			"Objects Get and Set",
+			"Objects Load and Save",
+			"Objects Private"
+		],
+		"methods": [
+			"Compiler_OBJ",
+			"OBJ__ReadMe",
+			"OBJ__UnitTest"
+		]
+	},
+	"Objects General": {
+		"methods": [
+			"OBJ_AppendToArray",
+			"OBJ_Clear",
+			"OBJ_Copy",
+			"OBJ_Create",
+			"OBJ_DoesKeyExist",
+			"OBJ_FromRecord",
+			"OBJ_IsEqual",
+			"OBJ_IsValid",
+			"OBJ_ListKeys",
+			"OBJ_RemoveKey",
+			"OBJ_ToRecord"
+		]
+	},
+	"Objects Get and Set": {
+		"methods": [
+			"OBJ_Get",
+			"OBJ_Get_4DArray",
+			"OBJ_Get_Array",
+			"OBJ_Get_ArraySize",
+			"OBJ_Get_Blob",
+			"OBJ_Get_Bool",
+			"OBJ_Get_Bool_iOS",
+			"OBJ_Get_Date",
+			"OBJ_Get_DateTimeLocal",
+			"OBJ_Get_Long",
+			"OBJ_Get_Null",
+			"OBJ_Get_Object",
+			"OBJ_Get_Picture",
+			"OBJ_Get_Real",
+			"OBJ_Get_Record",
+			"OBJ_Get_Selection",
+			"OBJ_Get_Text",
+			"OBJ_Get_Time",
+			"OBJ_Set",
+			"OBJ_Set_4DArray",
+			"OBJ_Set_Array",
+			"OBJ_Set_Blob",
+			"OBJ_Set_Bool",
+			"OBJ_Set_Date",
+			"OBJ_Set_DateTimeLocal",
+			"OBJ_Set_Long",
+			"OBJ_Set_Null",
+			"OBJ_Set_Object",
+			"OBJ_Set_Picture",
+			"OBJ_Set_Real",
+			"OBJ_Set_Record",
+			"OBJ_Set_Selection",
+			"OBJ_Set_Text",
+			"OBJ_Set_Time"
+		]
+	},
+	"Objects Load and Save": {
+		"methods": [
+			"OBJ_Load_FromBlob",
+			"OBJ_Load_FromClipboard",
+			"OBJ_Load_FromFile",
+			"OBJ_Load_FromGZIP",
+			"OBJ_Load_FromText",
+			"OBJ_Load_FromURL",
+			"OBJ_Save_ToBlob",
+			"OBJ_Save_ToClipboard",
+			"OBJ_Save_ToFile",
+			"OBJ_Save_ToGZIP",
+			"OBJ_Save_ToText"
+		]
+	},
+	"Objects Private": {
+		"methods": [
+			"OBJP_ConvertToDate",
+			"OBJP_GetSubObject",
+			"OBJP_OnErrIgnore"
+		]
+	},
+	"trash": {}
+}

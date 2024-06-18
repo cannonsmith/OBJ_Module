@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="OBJ_Module" uuid="E0BF2646D8CD46FF9D3FE697CDCA838D" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+	<base_extra data_file_path=":OBJ_Module.4DD"/>
+</base>
