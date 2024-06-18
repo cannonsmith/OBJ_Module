@@ -1,4 +1,9 @@
 {
+	"Foundation": {
+		"groups": [
+			"Objects"
+		]
+	},
 	"Objects": {
 		"groups": [
 			"Objects General",
