@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns an object array of records. You can inspect each record manually or use OBJ_ToRecord
 //to place each one in a record. This method does not automatically update records in the database.
 //It is left to you to decide how to do that.

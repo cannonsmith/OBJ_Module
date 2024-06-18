@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns a picture value. It should have previously been base64 encoded.
 
 C_OBJECT($1; $oObject)

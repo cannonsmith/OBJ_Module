@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects General","lang":"en"}
 //Returns true if the passed in key exists.
 
 C_OBJECT($1; $oObject)

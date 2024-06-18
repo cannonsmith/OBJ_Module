@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns a real value
 
 C_OBJECT($1; $oObject)

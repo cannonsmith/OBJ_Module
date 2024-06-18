@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns an array. Works with any kind of 4D array, including 2D arrays.
 //The array should have originally been set with OBJ_Set_Array or at least have the same
 //format as OBJ_Set_Array would have used.

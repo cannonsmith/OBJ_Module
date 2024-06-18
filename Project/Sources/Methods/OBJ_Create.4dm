@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects General","lang":"en"}
 //Creates a new, empty object. To do this correctly, we have
 //to create an empty JSON string ("{}") first and convert it
 //into an object. 4D doesn't do this automatically when an

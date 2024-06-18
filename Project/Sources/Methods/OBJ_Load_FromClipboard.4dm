@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Load and Save","lang":"en"}
 //Expects a JSON string in the clipboard and will turn it into an object.
 
 //Expects the JSON string to have an object ("{}") at the top level,

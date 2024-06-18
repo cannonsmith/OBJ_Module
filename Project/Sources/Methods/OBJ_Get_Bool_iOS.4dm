@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns a boolean value. When using NSJSONSerialization in iOS (or OS X)
 //to create a JSON string, booleans aren't supported directly. It can consume
 //JSON booleons, but converts them to an NSNumber as 0 or 1. So when JSON

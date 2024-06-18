@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects General","lang":"en"}
 //Compares two objects. If they are the same (ie. they have exactly the same elements and values),
 //the method returns true. Thanks to Vincent de Lachaux for the original code which has been changed
 //slightly to more closely match my style.
@@ -11,6 +11,7 @@ $oFirst:=$1
 $oSecond:=$2
 $fIsEqual:=False  //Defaul to false
 
+C_TEXT($tItem1; $tItem2)
 C_LONGINT($x; $y; $lFirstItemCount; $lSecondItemCount; $lFirstPropertyCount; $lSecondPropertyCount)
 ARRAY LONGINT($alFirstType; 0)
 ARRAY TEXT($atFirstProperty; 0)
@@ -47,7 +48,7 @@ If ($lFirstPropertyCount=$lSecondPropertyCount)  //They won't be equal if they h
 						OB Get($oFirst; $atFirstProperty{$x}; Is object); \
 						OB Get($oSecond; $atFirstProperty{$x}; Is object))
 					
-				: ($alFirstType{$x}=Object array)
+				: (($alFirstType{$x}=Object array) | ($alFirstType{$x}=Is collection))
 					//In an object array we can massage all the array types back into text except object themselves.
 					//So we get two sets of arrays, one text and the other objects. Then we can deal with either kind
 					//as we walk through each element.
@@ -68,12 +69,27 @@ If ($lFirstPropertyCount=$lSecondPropertyCount)  //They won't be equal if they h
 							If ((OB Is defined($aoFirst{$y})) & (OB Is defined($aoSecond{$y})))  //If they are both objects
 								$fIsEqual:=OBJ_IsEqual($aoFirst{$y}; $aoSecond{$y})
 							Else   //Compare text
-								$fIsEqual:=($atFirst{$y}=$atSecond{$y})
+								$tItem1:=$atFirst{$y}
+								$tItem2:=$atSecond{$y}
+								$fIsEqual:=((Length($tItem1)=Length($tItem2)) & (Position($tItem1; $tItem2; *)=1))  //Make comparison case sensitive //($atFirst{$y}=$atSecond{$y})
 							End if 
 							If ($fIsEqual=False)
 								$y:=$lFirstItemCount+1  //Abort loop
 							End if 
 						End for 
+					Else 
+						$fIsEqual:=False
+					End if 
+					
+				: ($alFirstType{$x}=Is text)  //We want a case-sensitive comparison for text
+					$tItem1:=OB Get($oFirst; $atFirstProperty{$x})
+					$tItem2:=OB Get($oSecond; $atFirstProperty{$x})
+					If (Length($tItem1)=Length($tItem2))
+						If (Length($tItem1)=0)  //Needed for an empty string
+							$fIsEqual:=True
+						Else 
+							$fIsEqual:=(Position($tItem1; $tItem2; *)=1)  //If not an empty string, is it exactly the same string (this check doesn't work for an empty string)
+						End if 
 					Else 
 						$fIsEqual:=False
 					End if 

@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns the size of the array. If the referred to object isn't an array, -1 is returned.
 //NOTE: This method does not work for 2D arrays.
 
@@ -18,7 +18,8 @@ ARRAY TEXT($atArray; 0)
 $oSubObject:=OBJP_GetSubObject($oObject; $tKey; ->$tLastKey; ->$lIndex; False)
 If ((OBJ_IsValid($oSubObject)=True) & ($tLastKey#""))
 	
-	If (OB Get type($oSubObject; $tLastKey)=Object array)  //Will be true for any array type
+	If ((OB Get type($oSubObject; $tLastKey)=Object array) | \
+		(OB Get type($oSubObject; $tLastKey)=Is collection))  //Will be true for any array type
 		OB GET ARRAY($oSubObject; $tLastKey; $atArray)  //Any kind of array will be coerced into a text array
 		$lSize:=Size of array($atArray)
 	End if 

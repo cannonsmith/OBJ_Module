@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Creates or updates a key with the passed in array.
 //Accepts any kind of 4D array, including 2D arrays. The following go through
 //special conversion and will look like strings in the actual JSON:

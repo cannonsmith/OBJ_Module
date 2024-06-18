@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Load and Save","lang":"en"}
 //Converts an object into a JSON string and throws it in the clipboard
 
 C_OBJECT($1; $oObject)

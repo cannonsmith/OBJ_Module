@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns a date value. It expects it to be formatted as "YYYY-MM-DD" JSON string.
 
 C_OBJECT($1; $oObject)

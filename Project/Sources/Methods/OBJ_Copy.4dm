@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects General","lang":"en"}
 //If you copy an object like this:
 //     $oCopy:=$oOriginal
 //4D copies by reference. Changing $oOriginal later

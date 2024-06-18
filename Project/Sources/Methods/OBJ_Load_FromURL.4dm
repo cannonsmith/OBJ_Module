@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Load and Save","lang":"en"}
 //Expects a JSON string to be returned after calling the URL.
 
 //Expects the JSON string to have an object ("{}") at the top level,
@@ -21,6 +21,8 @@ $tCurrentOnErrMethod:=Method called on error
 ON ERR CALL("OBJP_OnErrIgnore")
 $lHTTPCode:=HTTP Get($tURL; $tJSONString)
 ON ERR CALL($tCurrentOnErrMethod)  //Restore 
-$oObject:=OBJ_Load_FromText($tJSONString)
+If ($lHTTPCode=200)
+	$oObject:=OBJ_Load_FromText($tJSONString)
+End if 
 
 $0:=$oObject

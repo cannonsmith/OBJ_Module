@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects","lang":"en"}
 //Public methods
 C_OBJECT(OBJ_Create; $0)
 
@@ -87,6 +87,7 @@ C_OBJECT(OBJ_Get_Record; $1)
 C_TEXT(OBJ_Get_Record; $2)
 C_POINTER(OBJ_Get_Record; $3)
 C_TEXT(OBJ_Get_Record; $4)
+C_BOOLEAN(OBJ_Get_Record; $5)
 
 C_OBJECT(OBJ_Get_Selection; $1)
 C_TEXT(OBJ_Get_Selection; $2)
@@ -153,11 +154,13 @@ C_OBJECT(OBJ_Set_Record; $1)
 C_TEXT(OBJ_Set_Record; $2)
 C_POINTER(OBJ_Set_Record; $3)
 C_TEXT(OBJ_Set_Record; $4)
+C_BOOLEAN(OBJ_Set_Record; $5)
 
 C_OBJECT(OBJ_Set_Selection; $1)
 C_TEXT(OBJ_Set_Selection; $2)
 C_POINTER(OBJ_Set_Selection; $3)
 C_TEXT(OBJ_Set_Selection; $4)
+C_BOOLEAN(OBJ_Set_Selection; $5)
 
 C_OBJECT(OBJ_Set_Text; $1)
 C_TEXT(OBJ_Set_Text; $2)
@@ -169,11 +172,13 @@ C_TIME(OBJ_Set_Time; $3)
 
 C_POINTER(OBJ_FromRecord; $1)
 C_TEXT(OBJ_FromRecord; $2)
+C_BOOLEAN(OBJ_FromRecord; $3)
 C_OBJECT(OBJ_FromRecord; $0)
 
 C_OBJECT(OBJ_ToRecord; $1)
 C_POINTER(OBJ_ToRecord; $2)
 C_TEXT(OBJ_ToRecord; $3)
+C_BOOLEAN(OBJ_ToRecord; $4)
 
 
 C_TEXT(OBJ_Load_FromText; $1)

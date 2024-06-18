@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects General","lang":"en"}
 //Removes the key (which may be to a value or another object) from the
 //passed in object.
 

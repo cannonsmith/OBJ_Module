@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects General","lang":"en"}
 //Expects a record to be loaded in read/write mode in the passed in table. Sets each field
 //from the passed in object. It is up to you to save the record, or to ensure it isn't a
 //duplicate record, etc.
@@ -8,16 +8,31 @@
 //structure, it will be ignored. If the structure has fields that aren't in the object, they
 //will not be touched at all.
 
+//Unless you need to do otherwise for backward compatibility, always pass true for the native
+//date and time handling. That allows us to use dot notation in code to directly set date and
+//time values instead of having to use OBJ_Get/Set_... methods which handle dates and times
+//differently from before 4D supported them natively.
+
+
 C_OBJECT($1; $oRecord)  //Expects the record object to be passed in here
 C_POINTER($2; $pTable)
 C_TEXT($3; $tCodec)  //Optional. Used for picture fields. Extension (".png") or mime type ("image/jpeg")
+C_BOOLEAN($4; $fNativeDateTime)  //Optional. Default is false for backward compatibility. If true, we use native 4D date and time values.
 
 $oRecord:=$1
 $pTable:=$2
 If (Count parameters>2)
 	$tCodec:=$3
+	If ($tCodec="")
+		$tCodec:=".png"
+	End if 
 Else 
 	$tCodec:=".png"  //Default for picture fields
+End if 
+If (Count parameters>3)
+	$fNativeDateTime:=$4
+Else 
+	$fNativeDateTime:=False
 End if 
 
 C_LONGINT($x; $lLastFieldNumber)
@@ -36,12 +51,20 @@ If (OBJ_IsValid($oRecord)=True)
 			If (OBJ_DoesKeyExist($oRecord; $tFieldName)=True)
 				Case of 
 					: (Type($pField->)=Is date)
-						$tJSONValue:=OB Get($oRecord; $tFieldName; Is text)
-						$pField->:=OBJP_ConvertToDate($tJSONValue)
+						If ($fNativeDateTime=False)
+							$tJSONValue:=OB Get($oRecord; $tFieldName; Is text)
+							$pField->:=OBJP_ConvertToDate($tJSONValue)
+						Else 
+							$pField->:=OB Get($oRecord; $tFieldName)
+						End if 
 						
 					: (Type($pField->)=Is time)
-						$tJSONValue:=OB Get($oRecord; $tFieldName; Is text)
-						$pField->:=Time($tJSONValue)
+						If ($fNativeDateTime=False)
+							$tJSONValue:=OB Get($oRecord; $tFieldName; Is text)
+							$pField->:=Time($tJSONValue)
+						Else 
+							$pField->:=OB Get($oRecord; $tFieldName)
+						End if 
 						
 					: (Type($pField->)=Is picture)
 						$tJSONValue:=OB Get($oRecord; $tFieldName)

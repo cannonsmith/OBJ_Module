@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects","lang":"en"}
 //This method tests most of the OBJ_ commands. Testing of setting/getting records is not done
 //here but could be added for a specific database.
 

@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Private","lang":"en"}
 //4D doesn't handle dot notation or direct array element access ([x]) in object key paths. This
 //method handles the bulk of parsing this information out and is used by the main methods in this
 //module to get access to the correct subobject in a C_Object. The main object and keypath are
@@ -27,7 +27,7 @@ $pLastKey:=$3
 $pIndex:=$4
 $fSetting:=$5
 
-C_LONGINT($lPos; $lSize; $lIndex; $lIndexPos; $lLastLevel; $x)
+C_LONGINT($lPos; $lIndex; $lIndexPos; $lLastLevel; $x)
 C_TEXT($tSubKey; $tLastKey)
 C_OBJECT($oParent)
 ARRAY TEXT($atKeyLevel; 0)

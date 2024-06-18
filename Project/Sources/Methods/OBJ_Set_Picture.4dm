@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Creates or updates a key with the passed in value
 //The JSON value will be a string from the base64 encoded picture.
 

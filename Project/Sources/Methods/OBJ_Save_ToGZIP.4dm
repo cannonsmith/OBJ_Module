@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Load and Save","lang":"en"}
 //Converts an object into a JSON string and then GZIPs it into a blob.
 //Good for sending across the internet.
 

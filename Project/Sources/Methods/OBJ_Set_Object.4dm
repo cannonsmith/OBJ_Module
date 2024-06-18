@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Creates or updates a key with the passed in object. If you choose the
 //"Reference" option, only a reference to the object will be embedded which
 //means another method can change the original object and the embedded object

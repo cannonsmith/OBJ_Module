@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns a time value. It expects it to be formatted as "HH:MM:SS" JSON string.
 
 C_OBJECT($1; $oObject)

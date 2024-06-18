@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Load and Save","lang":"en"}
 //Converts an object into a JSON string. You choose whether it is "pretty
 //printed" or not.
 

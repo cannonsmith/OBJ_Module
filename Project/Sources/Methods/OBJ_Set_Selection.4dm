@@ -1,26 +1,40 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Creates or updates a key with the current selection of the passed in table. Internally, we also
 //record the table name and the count of records that are in the selection.
 
 //All 4D field types will be converted. The following go through special conversion and
 //will look like strings in the actual JSON:
-//   Date --> "YYYY-MM-DD" (same as OBJ_Set_Date)
-//   Time --> "HH:MM:SS" (same as OBJ_Set_Time)
+//   Date --> "YYYY-MM-DD" (same as OBJ_Set_Date) UNLESS you pass in the native date/time paramater (recommended)
+//   Time --> "HH:MM:SS" (same as OBJ_Set_Time) UNLESS you pass in the native date/time paramater (recommended)
 //   Picture --> becomes a base64 string. Remember to pass in the codec.
 //   Blob --> becomes a base64 string.
+
+//Unless you need to do otherwise for backward compatibility, always pass true for the native
+//date and time handling. That allows us to use dot notation in code to directly set date and
+//time values instead of having to use OBJ_Get/Set_... methods which handle dates and times
+//differently from before 4D supported them natively.
 
 C_OBJECT($1; $oObject)
 C_TEXT($2; $tKey)  //Can use dot notation
 C_POINTER($3; $pTable)
 C_TEXT($4; $tCodec)  //Optional. Used for picture fields. Extension (".png") or mime type ("image/jpeg")
+C_BOOLEAN($5; $fNativeDateTime)  //Optional. Default is false for backward compatibility. If true, we use native 4D date and time values. 
 
 $oObject:=$1
 $tKey:=$2
 $pTable:=$3
 If (Count parameters>3)
 	$tCodec:=$4
+	If ($tCodec="")
+		$tCodec:=".png"
+	End if 
 Else 
 	$tCodec:=".png"  //Default for picture fields
+End if 
+If (Count parameters>4)
+	$fNativeDateTime:=$5
+Else 
+	$fNativeDateTime:=False
 End if 
 
 C_LONGINT($x; $lIndex)
@@ -33,7 +47,7 @@ If ((OBJ_IsValid($oSubObject)=True) & ($tLastKey#""))
 	
 	For ($x; 1; Records in selection($pTable->))
 		GOTO SELECTED RECORD($pTable->; $x)
-		$oRecord:=OBJ_FromRecord($pTable; $tCodec)
+		$oRecord:=OBJ_FromRecord($pTable; $tCodec; $fNativeDateTime)
 		APPEND TO ARRAY($aoRecords; $oRecord)
 	End for 
 	OBJ_Set_Array($oObject; $tKey; ->$aoRecords)

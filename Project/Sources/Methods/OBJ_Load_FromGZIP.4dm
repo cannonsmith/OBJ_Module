@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Load and Save","lang":"en"}
 //Expects a GZIPed blob with a JSON string in it.
 
 //Expects the JSON string to have an object ("{}") at the top level,

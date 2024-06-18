@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Creates or updates a key with the value of null
 
 C_OBJECT($1; $oObject)

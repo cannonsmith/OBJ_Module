@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Load and Save","lang":"en"}
 //Converts an object directly into a compressed 4D blob. Only use if moving
 //between 4D and 4D and you want best compression.
 

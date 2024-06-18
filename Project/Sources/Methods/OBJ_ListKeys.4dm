@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects General","lang":"en"}
 //Returns a list of key names that are children to the passed in object.
 //Optionally, it can return the types as 4D thinks they are. See the documentation for
 //OB GET PROPERTY NAMES. Of course, it will think that the objects we treat differently

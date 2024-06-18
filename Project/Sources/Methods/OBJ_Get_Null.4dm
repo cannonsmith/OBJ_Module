@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns true if a key's value is set to null. False otherwise.
 
 C_OBJECT($1; $oObject)

@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects General","lang":"en"}
 //Objects don't need to have their memory free-ed in the same way
 //xml dom objects do. They are like normal variables that will
 //be cleared automatically once they go out of scope. However, if

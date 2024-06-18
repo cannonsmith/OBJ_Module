@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns the value at the passed in key path, but does so based on the type of the
 //pointer passed in. It can point to any kind of variable, a table, or a field.
 

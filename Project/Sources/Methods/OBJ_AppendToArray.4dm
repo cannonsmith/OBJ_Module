@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects General","lang":"en"}
 //When building up an array of objects before inserting the array into a
 //parent object, this method can be used to append the object to the array
 //with a copy or a reference. A copy ensures you can re-use the original

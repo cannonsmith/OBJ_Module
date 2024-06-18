@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Load and Save","lang":"en"}
 //Expects the passed in file to have an uncompressed JSON string as it's contents.
 
 //Expects the JSON string to have an object ("{}") at the top level,

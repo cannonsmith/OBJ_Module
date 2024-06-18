@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns an object. Use OBJ_IsValid afterward to make sure a real object
 //was returned.
 

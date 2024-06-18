@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Returns an array. Works the same as OBJ_Get_Array, but it also restores the additional
 //information 4D keeps about its arrays: the zero element and the selected element. The
 //array must have previously been added using OBJ_Set_4DArray for this extra information

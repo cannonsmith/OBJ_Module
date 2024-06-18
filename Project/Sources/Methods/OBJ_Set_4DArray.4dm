@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Creates or updates a key with the passed in array. Works the same as OBJ_Set_Array,
 //but it also stores the additional information 4D keeps about its arrays: the zero
 //element and the selected element. Thanks to Keith Goebel for the idea and code.

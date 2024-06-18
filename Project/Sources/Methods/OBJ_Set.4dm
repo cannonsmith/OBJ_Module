@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"Objects Get and Set","lang":"en"}
 //Sets the passed in record, field, or variable. If you are passing in a table,
 //all of it's fields will automatically be named based on each field name. If you
 //want to get or set an individual field later, use the keypath to the table +
